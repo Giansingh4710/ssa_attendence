@@ -14,8 +14,7 @@ if ($fp === false) {
 }
 
 date_default_timezone_set('US/Eastern');
-$writeTxt = date('M d Y H:i:s') . ", ";
-$writeTxt .= $_POST['email'] . "\n";
+$writeTxt = date('M d Y H:i:s') . ", $_POST['full_name'], $_POST['email']\n";
 if (fwrite($fp, $writeTxt) === false) {
     die("Failed to write to the file.");
 }
